@@ -375,9 +375,9 @@ class Trial(BaseTrial):
                 Step of the trial (e.g., Epoch of neural network training).
         """
 
-        self.storage.set_trial_value(self._trial_id, value)
+        self.storage.set_trial_value(self._trial_id, float(value))
         if step is not None:
-            self.storage.set_trial_intermediate_value(self._trial_id, step, value)
+            self.storage.set_trial_intermediate_value(self._trial_id, step, float(value))
 
     def should_prune(self, step=None):
         # type: (Optional[int]) -> bool
